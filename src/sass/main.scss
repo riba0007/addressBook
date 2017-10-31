@@ -1,0 +1,130 @@
+// main.scss
+@import "variables";
+@import "mixins";
+
+* {
+    font-family: sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+    color: $color-themeDark;
+}
+header {
+    width: 100%;
+    text-align: center;
+    background-color: $color-themeDark;
+    height: 10vh;
+    
+    h1 {
+        line-height: 10vh;
+        color: $color-themeLight;
+    }
+}
+main{
+    
+    background-color: $color-white;
+    @include clearfix;
+    
+    .wrap {
+        padding: $padding-theme;
+        height: 80vh;
+        
+        .container {
+            height: calc(80vh - #{$padding-theme}*2);
+            overflow: scroll;
+            float: left;
+
+            &.list {
+                width: calc(30vw - #{$padding-theme});
+                
+                li {
+                    list-style: none;
+                    padding: $padding-theme 0;
+                    border-bottom: 1px solid $color-lightGray;
+                    
+                    &:hover {
+                        a {
+                            background-color: $color-themeLight;
+                            font-size: 1.012rem;
+                            
+                            img {
+                                transform: scale(1.02);
+                            }
+                            
+                            p, span {
+                                color: $color-themeAccent;
+                            }
+                        }
+                    }
+                    
+                    a {
+                        text-decoration: none;
+                        transition: all 0.2s ease;
+                        
+                        
+                        figure {
+                            @include clearfix;
+                            
+                            img {
+                                float: left;
+                                padding-right: 10px;
+                                transition: all 0.2s ease;    
+                            }
+                            
+                            span {
+                                font-style: italic;
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.details {
+                width: calc(70vw - #{$padding-theme});
+                
+                p {
+                    text-align: center;
+                    line-height: calc(80vh - #{$padding-theme}*2);
+                }
+                
+                div {
+                    padding: 20px;
+                    margin: 0 0 0 50px;
+                    @include clearfix;
+                    
+                    p {
+                        text-align: left;
+                        line-height: 1.5;
+                    }
+                    
+                    figure {
+                        img {
+                            float: left;
+                            padding: 0 20px 20px 0;
+                        }
+
+                        h2 {
+                            color: $color-themeAccent;
+                        }
+
+                        span {
+                            font-style: italic;
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+footer {
+    background-color: $color-lightGray;
+    height: 10vh;
+    padding: 0 $padding-theme;
+    font-size: 0.8rem;
+    text-align: center;
+    p {
+        line-height: 10vh;
+    }
+}
