@@ -16,6 +16,11 @@ var webpackConfig = {
                 use: "babel-loader"
             },
             {
+                test: /\.jsx?$/,
+                use: "eslint-loader",
+                exclude: /node_modules/
+            },
+            {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract(["css-loader", "sass-loader"])
             },
